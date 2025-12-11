@@ -34,6 +34,8 @@
   --heartbeat: 1.5s ease-in-out infinite;
 }
 
+
+
 /* ========================
    RESET & BASE STYLES
 ======================= */
@@ -42,6 +44,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
 
 html {
   scroll-behavior: smooth;
@@ -73,6 +77,42 @@ body::before {
     radial-gradient(circle at 40% 80%, rgba(255, 64, 129, 0.1) 0%, transparent 40%);
   pointer-events: none;
   z-index: -1;
+}
+
+/* ========================
+   IMAGE OPTIMIZATION - TỐI ƯU HÌNH ẢNH
+======================= */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* ========================
+   PERFORMANCE OPTIMIZATION - TỐI ƯU HIỆU SUẤT
+======================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ========================
+   DARK MODE SUPPORT - HỖ TRỢ CHẾ ĐỘ TỐI
+======================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dark-pink-1: #0a0509;
+    --dark-pink-2: #1a0a12;
+  }
 }
 
 /* ========================
@@ -2002,7 +2042,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 /* ========================
    RESPONSIVE DESIGN - THIẾT KẾ ĐÁP ỨNG
 ======================= */
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .profile-container {
     flex-direction: column;
     text-align: center;
@@ -2286,6 +2326,953 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
   .open-video-btn h3 {
     font-size: 1rem;
+  }
+} */
+
+/* ========================
+   RESPONSIVE DESIGN - THIẾT KẾ ĐÁP ỨNG TỐI ƯU
+======================= */
+
+/* Mobile First Approach - Thiết kế từ mobile lên */
+
+/* ========== Extra Small Devices (Phones, dưới 576px) ========== */
+@media (max-width: 575.98px) {
+  /* Global */
+  body {
+    font-size: 14px;
+  }
+  
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.6rem;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0.8rem !important;
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: 100px 15px 40px;
+  }
+  
+  .profile-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .content-right h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .content-right p {
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-img {
+    max-width: 280px;
+    border-width: 8px;
+    border-radius: var(--radius-medium);
+  }
+  
+  .socials {
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  
+  .socials a {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  /* Love Counter */
+  .hero-section {
+    padding: 50px 15px;
+    margin: 20px 15px;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .couple-names {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .love-count {
+    padding: 25px 15px;
+    margin: 2rem auto;
+  }
+  
+  .count-container {
+    gap: 0.8rem;
+  }
+  
+  .count-box {
+    min-width: calc(50% - 0.8rem);
+    padding: 1.2rem 0.5rem;
+  }
+  
+  .count-number {
+    font-size: 2rem;
+  }
+  
+  .count-label {
+    font-size: 0.9rem;
+  }
+  
+  .love-date {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  /* Photo Gallery */
+  .photo-gallery1 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 40px 15px;
+  }
+  
+  .photo-container1 img {
+    height: 250px;
+  }
+  
+  .photo-caption1 {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Couple Info */
+  .couple-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 40px 15px;
+  }
+  
+  .person {
+    padding: 1.5rem;
+  }
+  
+  .person-name {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  /* Memory Gallery */
+  .photo-gallery-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 40px 15px;
+  }
+  
+  .photo-container img {
+    height: 250px;
+  }
+  
+  .photo-caption {
+    font-size: 1rem;
+    padding: 1rem;
+    min-height: auto;
+  }
+  
+  /* Carousel */
+  #carouselExample {
+    height: 250px;
+    margin: 2rem auto;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 45px;
+    height: 45px;
+    margin: 0 0.5rem;
+  }
+  
+  /* Calendar */
+  .skills-section {
+    padding: 60px 15px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .calendar-controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .calendar-controls button {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.7rem;
+  }
+  
+  .day {
+    min-height: 80px;
+    padding: 0.7rem;
+  }
+  
+  .day-number {
+    font-size: 1rem;
+  }
+  
+  /* Timeline */
+  .timeline {
+    padding: 60px 15px;
+  }
+  
+  .timeline-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    width: calc(100% - 50px);
+    margin-left: 40px;
+    left: 0 !important;
+  }
+  
+  .timeline-content {
+    padding: 1.2rem;
+  }
+  
+  /* Video Section */
+  .video-section {
+    padding: 40px 15px;
+    margin: 20px 15px;
+  }
+  
+  .video-buttons-container {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .open-video-btn {
+    min-width: 100%;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .video-icon {
+    font-size: 2.5rem;
+  }
+  
+  .open-video-btn h3 {
+    font-size: 1.1rem;
+  }
+  
+  /* Popup */
+  .popup-content {
+    width: 95%;
+    margin: 10px auto;
+  }
+  
+  .video-header {
+    padding: 1rem 1.2rem;
+  }
+  
+  .video-title {
+    font-size: 1.1rem;
+  }
+  
+  /* Love Counter Footer */
+  #love-counter-footer {
+    padding: 40px 15px;
+    margin: 20px 15px;
+  }
+  
+  .counter-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .counter-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .counter-icon i {
+    font-size: 2rem;
+  }
+  
+  .counter-text h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .days-counter {
+    gap: 1rem;
+  }
+  
+  .days-number {
+    font-size: 2.8rem;
+  }
+  
+  .days-text {
+    font-size: 1.3rem;
+  }
+  
+  .love-quote {
+    padding: 1.5rem;
+  }
+  
+  .love-quote p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  /* Footer */
+  .contact-footer {
+    padding-top: 80px;
+    margin-top: 40px;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0 15px 30px;
+  }
+  
+  .footer-logo-section {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .logo-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .footer-contacts {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-column {
+    text-align: center;
+  }
+  
+  .contact-divider {
+    margin: 0 auto 1.5rem auto;
+  }
+  
+  .contact-list li {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  /* Back to Top Button */
+  .back-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* ========== Small Devices (Tablets dọc, 576px - 767.98px) ========== */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero {
+    padding: 120px 20px 50px;
+  }
+  
+  .content-right h1 {
+    font-size: 2.4rem;
+  }
+  
+  .content-right p {
+    font-size: 1.1rem;
+  }
+  
+  .profile-img {
+    max-width: 350px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  .couple-names {
+    font-size: 1.4rem;
+  }
+  
+  .count-box {
+    min-width: calc(50% - 1rem);
+  }
+  
+  .photo-gallery-wrapper {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .photo-container img {
+    height: 300px;
+  }
+  
+  .couple-info {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .person {
+    padding: 2rem;
+  }
+  
+  .calendar-controls {
+    flex-wrap: wrap;
+  }
+  
+  .calendar-controls button {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .day {
+    min-height: 100px;
+  }
+  
+  .timeline-title {
+    font-size: 2.2rem;
+  }
+  
+  .video-buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .open-video-btn {
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  #carouselExample {
+    height: 350px;
+  }
+  
+  .counter-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-contacts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== Medium Devices (Tablets ngang, 768px - 991.98px) ========== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  .hero {
+    padding: 140px 30px 60px;
+  }
+  
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .content-right {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .content-right h1 {
+    font-size: 3rem;
+  }
+  
+  .profile-img {
+    max-width: 400px;
+  }
+  
+  .hero-section {
+    padding: 80px 30px;
+    margin: 30px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.8rem;
+  }
+  
+  .couple-names {
+    font-size: 1.6rem;
+  }
+  
+  .count-container {
+    gap: 1.5rem;
+  }
+  
+  .count-box {
+    min-width: calc(25% - 1.5rem);
+  }
+  
+  .photo-gallery-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 50px 30px;
+  }
+  
+  .photo-container img {
+    height: 250px;
+  }
+  
+  .couple-info {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 50px 30px;
+  }
+  
+  .person {
+    padding: 1.8rem;
+  }
+  
+  .person-name {
+    font-size: 1.6rem;
+  }
+  
+  #carouselExample {
+    height: 400px;
+    max-width: 700px;
+  }
+  
+  .calendar {
+    gap: 0.6rem;
+    padding: 1.2rem;
+  }
+  
+  .day {
+    min-height: 90px;
+    padding: 0.8rem;
+  }
+  
+  .timeline::before {
+    left: 50%;
+  }
+  
+  .timeline-item {
+    width: 46%;
+  }
+  
+  .timeline-item:nth-child(odd) {
+    left: 0;
+  }
+  
+  .timeline-item:nth-child(even) {
+    left: 54%;
+  }
+  
+  .video-buttons-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .open-video-btn {
+    min-width: 300px;
+    flex: 0 1 calc(50% - 20px);
+  }
+  
+  .counter-content {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .footer-contacts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  .contact-column {
+    text-align: left;
+  }
+  
+  .contact-divider {
+    margin-left: 0;
+  }
+  
+  .contact-list li {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* ========== Large Devices (Desktops, 992px - 1199.98px) ========== */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .profile-container {
+    gap: 50px;
+  }
+  
+  .content-right h1 {
+    font-size: 3.2rem;
+  }
+  
+  .profile-img {
+    max-width: 450px;
+  }
+  
+  .photo-gallery-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .photo-container img {
+    height: 350px;
+  }
+  
+  .couple-info {
+    gap: 2.5rem;
+  }
+  
+  #carouselExample {
+    max-width: 700px;
+    height: 450px;
+  }
+  
+  .timeline-container {
+    max-width: 700px;
+  }
+  
+  .video-buttons-container {
+    gap: 2rem;
+  }
+  
+  .open-video-btn {
+    min-width: 280px;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+  }
+}
+
+/* ========== Extra Large Devices (Desktops lớn, 1200px trở lên) ========== */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .photo-gallery-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  .photo-container img {
+    height: 400px;
+  }
+  
+  .photo-caption {
+    font-size: 1.3rem;
+    min-height: 90px;
+  }
+}
+
+/* ========== Super Large Devices (Màn hình rất lớn, 1400px+) ========== */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .hero {
+    padding: 160px 20px 100px;
+  }
+  
+  .profile-container {
+    max-width: 1400px;
+  }
+  
+  .content-right h1 {
+    font-size: 4rem;
+  }
+  
+  .content-right p {
+    font-size: 1.4rem;
+  }
+  
+  .photo-gallery-wrapper {
+    max-width: 1400px;
+    gap: 3.5rem;
+  }
+  
+  .photo-container img {
+    height: 450px;
+  }
+  
+  .footer-container {
+    max-width: 1400px;
+  }
+}
+
+/* ========== Orientation Specific (Điều chỉnh theo hướng màn hình) ========== */
+/* Portrait mode (dọc) */
+@media (max-height: 600px) and (orientation: portrait) {
+  .hero {
+    min-height: auto;
+    padding: 120px 20px 60px;
+  }
+  
+  .profile-container {
+    flex-direction: column;
+  }
+  
+  .profile-img {
+    max-width: 250px;
+  }
+  
+  #carouselExample {
+    height: 300px;
+  }
+}
+
+/* Landscape mode (ngang) */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 100px 20px 40px;
+  }
+  
+  .profile-container {
+    flex-direction: row;
+  }
+  
+  .content-right h1 {
+    font-size: 2rem;
+  }
+  
+  .content-right p {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  
+  .profile-img {
+    max-width: 200px;
+  }
+  
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-link {
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== High DPI Displays (Retina) ========== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .profile-img,
+  .photo-container1 img,
+  .photo-container img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .navbar,
+  .video-section,
+  .video-buttons-container,
+  .back-to-top-btn,
+  .socials,
+  .carousel-control-prev,
+  .carousel-control-next,
+  .footer-wave,
+  .footer-social {
+    display: none !important;
+  }
+  
+  .hero {
+    padding: 20px 0 !important;
+  }
+  
+  .profile-img {
+    border: 2px solid #ccc !important;
+    box-shadow: none !important;
+  }
+  
+  .content-right h1,
+  .hero-section h1,
+  .section-title,
+  .timeline-title {
+    color: black !important;
+    -webkit-text-fill-color: black !important;
+    text-shadow: none !important;
+  }
+}
+/* ========================
+   RESPONSIVE UTILITIES - TIỆN ÍCH ĐÁP ỨNG
+======================= */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+
+/* Mobile */
+.d-mobile-none { display: none; }
+.d-mobile-block { display: block; }
+
+/* Tablet */
+@media (min-width: 768px) {
+  .d-tablet-none { display: none; }
+  .d-tablet-block { display: block; }
+  .d-tablet-flex { display: flex !important; }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .d-desktop-none { display: none; }
+  .d-desktop-block { display: block; }
+  .d-desktop-flex { display: flex !important; }
+}
+
+/* Grid System đơn giản */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding: 0 15px;
+}
+
+/* Column sizes */
+.col-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+.col-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+.col-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+.col-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+.col-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+.col-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+.col-9 { flex: 0 0 75%; max-width: 75%; }
+.col-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+.col-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+
+/* Responsive columns */
+@media (max-width: 767.98px) {
+  .col-sm-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+  .col-sm-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+  .col-sm-3 { flex: 0 0 25%; max-width: 25%; }
+  .col-sm-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+  .col-sm-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+  .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-sm-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+  .col-sm-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+  .col-sm-9 { flex: 0 0 75%; max-width: 75%; }
+  .col-sm-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+  .col-sm-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+  .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .col-md-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+  .col-md-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+  .col-md-3 { flex: 0 0 25%; max-width: 25%; }
+  .col-md-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+  .col-md-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-md-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+  .col-md-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+  .col-md-9 { flex: 0 0 75%; max-width: 75%; }
+  .col-md-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+  .col-md-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+  .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* ========================
+   TOUCH DEVICE OPTIMIZATION - TỐI ƯU CHO THIẾT BỊ CẢM ỨNG
+======================= */
+@media (hover: none) and (pointer: coarse) {
+  /* Tăng kích thước touch target */
+  .nav-link,
+  .socials a,
+  .calendar-controls button,
+  .open-video-btn,
+  .back-to-top-btn,
+  .carousel-control-prev,
+  .carousel-control-next {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Giảm hiệu ứng hover cho mobile */
+  .count-box:hover,
+  .photo-container1:hover,
+  .person:hover,
+  .photo-gallery:hover,
+  .open-video-btn:hover,
+  .timeline-content:hover {
+    transform: none;
+  }
+  
+  /* Active states thay cho hover */
+  .nav-link:active,
+  .socials a:active,
+  .calendar-controls button:active,
+  .open-video-btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* Tăng padding cho dễ chạm */
+  .day {
+    padding: 1.2rem 0.8rem;
   }
 }
 
